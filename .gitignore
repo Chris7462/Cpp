@@ -1,2 +1,2 @@
-tetris/*.o
-tetris/tetris
+./tetris/*.o
+./tetris/tetris
