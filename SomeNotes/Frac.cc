@@ -6,16 +6,45 @@ using namespace std;
 int main(){
   
   /* Constructor */
-  Frac a(3,-2), b(2), c, d(a);
+  Frac a(3,-2), b(2), c, d=c; // d(c);
   cout << "There are " << Frac::obj_no() << " objects in the set" << endl;
 
   /* io operator overload */
-  cout << a << endl << b << endl << c << endl << d << endl;
+  cout << "a = " << a << endl << "b = " << b << endl << "c = " << c << endl << "d = " << d << endl;
 //cout << "Input a frac number" << endl;
 //Frac e;
 //cin >> e;
 //cout << e << endl;
 
+  /* operators */
+  c = a;
+  cout << "c = a: " << c << endl;
+  c = b;
+  cout << "c = b: " << c << endl;
+
+  c = a+b;
+  cout << "c = a+b: " << c << endl;
+  
+  c = a-b;
+  cout << "c = a-b: " << c << endl;
+  
+  c = a*b;
+  cout << "c = a*b: " << c << endl;
+
+  c = a/b;
+  cout << "c = a/b: " << c << endl;
+
+  c += b;
+  cout << "c += b: " << c << endl;
+
+  c -= a;
+  cout << "c -= a: " << c << endl;
+
+  c *= a;
+  cout << "c *= a: " << c << endl;
+
+  c /= a;
+  cout << "c /= a: " << c << endl;
 
   return 0;
 }
