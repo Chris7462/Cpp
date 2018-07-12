@@ -65,5 +65,16 @@ int main(){
     }
   }
 
+  /* pointer-array */
+  int foo4[2][3] = {1,2,3,4,5,6};
+  int (*ptr4)[3] = &foo4[0];
+  for ( i=0 ; i<2 ; ++i ){
+    for ( j=0; j<3 ; ++j ){
+      cout << *(*(ptr4+i)+j) << " ";
+      cout << ptr4[i][j] << " ";
+    }
+    cout << endl;
+  }
+
   return 0;
 }
