@@ -46,5 +46,31 @@ int main(){
   c /= a;
   cout << "c /= a: " << c << endl;
 
+  cout << "-c : " << -c << endl;
+
+  cout << "c == a ? " << (c==a) << endl;
+
+  cout << "c < a ? " << (c<a) << endl;
+
+  cout << "c > a ? " << (c>a) << endl;
+
+  cout << "c != a ? " << (c!=a) << endl;
+
+  cout << "c <= a ? " << (c<=a) << endl;
+
+  cout << "c >= a ? " << (c>=a) << endl;
+
+  cout << "++c : " << ++c << endl;
+
+  cout << "c++ : " << c++ << " => " << c << endl;
+
+  cout << "--c : " << --c << endl;
+
+  cout << "c-- : " << c-- << " => " << c << endl;
+
+  cout << "static_cast<int>(c) : " << static_cast<int>(c) << endl;
+
+  cout << "static_cast<double>(c) : " << static_cast<double>(c) << endl;
+
   return 0;
 }
