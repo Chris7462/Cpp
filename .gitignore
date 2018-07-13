@@ -1,5 +1,5 @@
 tetris/*.o
 tetris/tetris
-CppExamples/bak
-CppExamples/a.out
-CppExamples/bak/*
+Examples/bak
+Examples/a.out
+Examples/bak/*
