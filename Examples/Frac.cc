@@ -1,76 +1,74 @@
 #include <iostream>
 #include "Frac.h"
 
-using namespace std;
-
 int main(){
   
   /* Constructor */
   Frac a(3,-2), b(2), c, d=c; // d(c);
-  cout << "There are " << Frac::obj_no() << " objects in the set" << endl;
+  std::cout << "There are " << Frac::obj_no() << " objects in the set" << std::endl;
 
   /* io operator overload */
-  cout << "a = " << a << endl << "b = " << b << endl << "c = " << c << endl << "d = " << d << endl;
-//cout << "Input a frac number" << endl;
+  std::cout << "a = " << a << std::endl << "b = " << b << std::endl << "c = " << c << std::endl << "d = " << d << std::endl;
+//std::cout << "Input a frac number" << std::endl;
 //Frac e;
 //cin >> e;
-//cout << e << endl;
+//std::cout << e << std::endl;
 
   /* operators */
   c = a;
-  cout << "c = a: " << c << endl;
+  std::cout << "c = a: " << c << std::endl;
   c = b;
-  cout << "c = b: " << c << endl;
+  std::cout << "c = b: " << c << std::endl;
 
   c = a+b;
-  cout << "c = a+b: " << c << endl;
+  std::cout << "c = a+b: " << c << std::endl;
   
   c = a-b;
-  cout << "c = a-b: " << c << endl;
+  std::cout << "c = a-b: " << c << std::endl;
   
   c = a*b;
-  cout << "c = a*b: " << c << endl;
+  std::cout << "c = a*b: " << c << std::endl;
 
   c = a/b;
-  cout << "c = a/b: " << c << endl;
+  std::cout << "c = a/b: " << c << std::endl;
 
   c += b;
-  cout << "c += b: " << c << endl;
+  std::cout << "c += b: " << c << std::endl;
 
   c -= a;
-  cout << "c -= a: " << c << endl;
+  std::cout << "c -= a: " << c << std::endl;
 
   c *= a;
-  cout << "c *= a: " << c << endl;
+  std::cout << "c *= a: " << c << std::endl;
 
   c /= a;
-  cout << "c /= a: " << c << endl;
+  std::cout << "c /= a: " << c << std::endl;
 
-  cout << "-c : " << -c << endl;
+  std::cout << "-c : " << -c << std::endl;
 
-  cout << "c == a ? " << (c==a) << endl;
+  std::cout << "c == a ? " << (c==a) << std::endl;
 
-  cout << "c < a ? " << (c<a) << endl;
+  std::cout << "c < a ? " << (c<a) << std::endl;
 
-  cout << "c > a ? " << (c>a) << endl;
+  std::cout << "c > a ? " << (c>a) << std::endl;
 
-  cout << "c != a ? " << (c!=a) << endl;
+  std::cout << "c != a ? " << (c!=a) << std::endl;
 
-  cout << "c <= a ? " << (c<=a) << endl;
+  std::cout << "c <= a ? " << (c<=a) << std::endl;
 
-  cout << "c >= a ? " << (c>=a) << endl;
+  std::cout << "c >= a ? " << (c>=a) << std::endl;
 
-  cout << "++c : " << ++c << endl;
+  std::cout << "++c : " << ++c << std::endl;
 
-  cout << "c++ : " << c++ << " => " << c << endl;
+  std::cout << "c++ : " << c++ << " => " << c << std::endl;
 
-  cout << "--c : " << --c << endl;
+  std::cout << "--c : " << --c << std::endl;
 
-  cout << "c-- : " << c-- << " => " << c << endl;
+  std::cout << "c-- : " << c-- << " => " << c << std::endl;
 
-  cout << "static_cast<int>(c) : " << static_cast<int>(c) << endl;
+  std::cout << "static_cast<int>(c) : " << static_cast<int>(c) << std::endl;
 
-  cout << "static_cast<double>(c) : " << static_cast<double>(c) << endl;
+  std::cout << "static_cast<double>(c) : " << static_cast<double>(c) << std::endl;
 
   return 0;
 }

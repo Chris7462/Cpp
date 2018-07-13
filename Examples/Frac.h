@@ -9,14 +9,8 @@ class Frac{
   public:
     /* constructor */
     Frac() : _num(0), _den(1) { ++no; }
-    explicit Frac(int n, int d=1) : _num(n), _den(d) { 
-      if( d<0 ){
-        _num *= -1;
-        _den *= -1;
-      }
-      ++no; 
-    }
-    Frac(const Frac& foo){ _num = foo._num; _den = foo._den; ++no; }
+    Frac(int n, int d=1);
+    Frac(const Frac& foo);
 
     /* assign operator */
     Frac& operator=(const Frac& foo);
@@ -59,6 +53,21 @@ class Frac{
 
 /* initialize the static variable */
 int Frac::no=0;
+
+/* constructor */
+Frac::Frac(int n, int d) : _num(n), _den(d) { 
+  if( d<0 ){
+    _num *= -1;
+    _den *= -1;
+  }
+  ++no; 
+}
+
+Frac::Frac(const Frac& foo){ 
+  _num = foo._num; 
+  _den = foo._den; 
+  ++no; 
+}
 
 /* some general functions */
 int Frac::gcd(int a, int b) const {
