@@ -1,5 +1,5 @@
-./tetris/*.o
-./tetris/tetris
-./SomeNotes/bak
-./SomeNotes/a.out
-./SomeNotes/bak/
+tetris/*.o
+tetris/tetris
+SomeNotes/bak
+SomeNotes/a.out
+SomeNotes/bak/
