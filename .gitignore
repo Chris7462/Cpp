@@ -2,4 +2,4 @@ tetris/*.o
 tetris/tetris
 SomeNotes/bak
 SomeNotes/a.out
-SomeNotes/bak/
+SomeNotes/bak/*
