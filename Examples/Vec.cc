@@ -25,5 +25,16 @@ int main(){
   c = a-e;
   std::cout << "c = a-e : " << c << std::endl;
 
+  std::cout << "a*c = " << a*c << std::endl;
+
+  Vec vec[2] = {a,c};
+
+  vec[1][1] = 2;
+  std::cout << "vec[1][1] = " << vec[1].operator[](1) << std::endl;
+
+  std::cout << "vec[0] = " << vec[0] << std::endl;
+  std::cout << "vec[1] = " << vec[1] << std::endl;
+  std::cout << "vec[0]*vec[1] = " << vec[0]*vec[1] << std::endl;
+
   return 0;
 }

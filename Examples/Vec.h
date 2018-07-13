@@ -28,6 +28,7 @@ class Vec{
     /* overload operators as member function */
     Vec operator+(const Vec&) const ;
     Vec operator-(const Vec&) const ;
+    int operator*(const Vec&) const;
 
 };
 
@@ -98,6 +99,19 @@ Vec Vec::operator-(const Vec& a) const {
     foo.data[i] = this->data[i] - a.data[i];
   }
   return foo;
+}
+
+int Vec::operator*(const Vec& foo) const {
+  if( !size ){
+    return 0;
+  } else {
+    int sum=0;
+    for( int i=0 ; i<size ; ++i ){
+      //sum += data[i]*foo.data[i];
+      sum += data[i]*foo[i];
+    }
+    return sum;
+  }
 }
 
 #endif
