@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -14,6 +15,7 @@ class Polygon{
   public:
     int vertex_no() const { return vertex.size(); }
     Point geometrical_center() const {} // not finished
+    virtual string name() const { return "Polygon"; }
 };
 
 class Traingle : public Polygon {
@@ -25,6 +27,7 @@ class Traingle : public Polygon {
       vertex.push_back(pt3);
     }
     Point circumcenter () const {}
+    virtual string name() const { return "Traingle"; }
 };
 
 class Rectangle : public Polygon {
@@ -36,7 +39,12 @@ class Rectangle : public Polygon {
       vertex.push_back(pt3);
       vertex.push_back(pt4);
     }
+    virtual string name() const { return "Rectangle"; }
 };
+
+void print_vertex_no( const Polygon& p){
+  cout << p.name() << " : " << p.vertex_no() << endl;
+}
 
 int main(){
   Point o(0,0), a(1,0), b(0,1), c(1,1);
@@ -46,5 +54,11 @@ int main(){
   cout << triangle.vertex_no() << endl;
   cout << rectangle.vertex_no() << endl;
 
+  cout << triangle.name() << endl;
+  cout << rectangle.name() << endl;
+
+  print_vertex_no(triangle);
+  print_vertex_no(rectangle);
+  
   return 0;
 }
