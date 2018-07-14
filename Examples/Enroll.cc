@@ -68,12 +68,7 @@ class Course {
 
 int main(){
 
-
   Student a("Bob",9010), b("Chris",9011), c = {"Amy", 9012}, d= {"Pete", 9014};
-//std::cout << a << std::endl;
-//std::cout << b << std::endl;
-//std::cout << c << std::endl;
-//std::cout << d << std::endl;
 
   Course stat;
   stat.add_student(1,a);
