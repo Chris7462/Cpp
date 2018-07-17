@@ -16,7 +16,7 @@ class Polygon {
     virtual std::string name() const { return "Polygon"; }
     Point geometrical_center() const;
     friend std::ostream& operator<<(std::ostream& out, const Polygon& foo) ;
-
+    virtual ~Polygon(){ std::cout << "De-Polygon" << std::endl; }
 };
 
 class Triangle : public Polygon {
@@ -24,6 +24,7 @@ class Triangle : public Polygon {
     Triangle(){}
     Triangle(Point pt1, Point pt2, Point pt3){ vertex.push_back(pt1); vertex.push_back(pt2); vertex.push_back(pt3); }
     virtual std::string name() const { return "Triangle"; }
+    ~Triangle(){ std::cout << "De-Triangle" << std::endl; }
 };
 
 class Rectangle : public Polygon {
@@ -31,6 +32,7 @@ class Rectangle : public Polygon {
     Rectangle(){}
     Rectangle(Point pt1, Point pt2, Point pt3, Point pt4){ vertex.push_back(pt1); vertex.push_back(pt2); vertex.push_back(pt3); vertex.push_back(pt4); }
     virtual std::string name() const { return "Rectangle"; }
+    ~Rectangle(){ std::cout << "De-Rectangle" << std::endl; }
 };
 
 int main(){
@@ -52,6 +54,27 @@ int main(){
 
   Polygon &pol3 = tria;   // virtual function 
   std::cout << pol3 << std::endl;
+
+  // destructor for Derive
+  Triangle *ptr = new Triangle(a,b,c);
+  std::cout << *ptr << std::endl;
+  delete ptr;
+
+  // destructor for Base
+  Polygon *poly = new Triangle(o,a,b);
+  std::cout << *poly << std::endl;
+  delete poly;
+
+  Polygon *poly2 = new Triangle(a,b,c);
+  Triangle *tri2 = dynamic_cast<Triangle*>(poly2);
+  //Triangle &tri2 = dynamic_cast<Triangle&>(*poly2);
+
+  if (tri2 ){
+    std::cout << "It success!" << std::endl;
+    std::cout << *tri2 << std::endl;
+  } else {
+    std::cout << "It fails!" << std::endl;
+  }
 
   return 0;
 }
