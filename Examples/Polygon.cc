@@ -42,6 +42,17 @@ int main(){
   Rectangle rectangle(o,a,c,b);
   std::cout << rectangle << std::endl;
 
+  Triangle tria(o,a,b);
+  Polygon pol(tria);    // cast to polygon, not virtual
+  std::cout << pol << std::endl;
+
+  Polygon pol2;
+  pol2 = static_cast<Polygon>(tria);  // cast again, not virtual
+  std::cout << pol2 << std::endl;
+
+  Polygon &pol3 = tria;   // virtual function 
+  std::cout << pol3 << std::endl;
+
   return 0;
 }
 
