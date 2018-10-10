@@ -13,7 +13,7 @@ class Stack{
     const int& top() const;
     void push(const int& val);
     void pop();
-    void swap(Stack& x);
+    void swap(Stack& foo);
 
   private:
     enum {SIZE=10};
@@ -30,17 +30,15 @@ int Stack::size() const {
 }
 
 int& Stack::top() {
-  if ( element_no == 0 ){
-    cout << "No element in the stack. Nothing to show." << endl;
+  if ( element_no > 0 ){
+    return data[element_no-1];
   }
-  return data[element_no-1];
 }
 
 const int& Stack::top() const {
-  if ( element_no == 0 ){
-    cout << "No element in the stack. Nothing to show." << endl;
+  if ( element_no > 0 ){
+    return data[element_no-1];
   }
-  return data[element_no-1];
 }
 
 void Stack::push(const int& val){
@@ -53,22 +51,39 @@ void Stack::push(const int& val){
 }
 
 void Stack::pop(){
-  if ( element_no == 0 ){
-    cout << "No element in the stack. Nothing to pop." << endl;
-    return;
+  if ( element_no > 0 ){
+    --element_no;
   }
-  --element_no;
 }
 
-void Stack::swap(Stack& x){
-  int i, tmp_data[SIZE], tmp_element_no;
-  for ( i = 0 ; i < (*this).size() ; ++i ){
-    tmp_data[i] = (*this).top();
-    (*this).pop();
+void Stack::swap(Stack& foo){
+  int i, n;
+  Stack tmp;
+
+  // tmp = this
+  if ( !(*this).empty() ){
+    n = (*this).size();
+    for ( i = 0 ; i < n ; ++i ){
+      tmp.push((*this).top());
+      (*this).pop();
+    }
   }
 
-  //tmp_element_no = element_no;
+  // this = foo
+  if ( !foo.empty() ){
+    n = foo.size();
+    for ( i = 0 ; i < n ; ++i ){
+      (*this).push(foo.top());
+      foo.pop();
+    }
+  }
 
+  // foo = tmp
+  n = tmp.size();
+  for ( i = 0 ; i < n ; ++i ){
+    foo.push(tmp.top());
+    tmp.pop();
+  }
 }
 
 #endif
