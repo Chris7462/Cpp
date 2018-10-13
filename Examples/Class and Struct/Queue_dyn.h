@@ -66,8 +66,14 @@ const int& Queue::back() const {
 void Queue::pop(){
   if ( element_no > 0 ){
     --element_no;
-    first_index = (element_no == 0 ? -1 : (++first_index)%max_element_no);
-    last_index = (element_no == 0 ? -1 : last_index);
+    if ( element_no == 0 ){
+      first_index = -1;
+      last_index = -1;
+    } else {
+      first_index = (++first_index)%max_element_no;
+    }
+    //first_index = (element_no == 0 ? -1 : (++first_index)%max_element_no);
+    //last_index = (element_no == 0 ? -1 : last_index);
   } else {
     cout << "Nothing to pop" << endl;
   }
@@ -98,7 +104,7 @@ void Queue::push(const int& val){
     data = tmp_data;
     first_index = 0;
     last_index = max_element_no;
-    element_no = last_index+1;
+    element_no = max_element_no+1;
     max_element_no += Inc_Size;
   } else {
     last_index = (++last_index)%max_element_no;
