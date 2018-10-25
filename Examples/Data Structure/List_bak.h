@@ -1,4 +1,5 @@
-#include "List.h"
+#ifndef _LIST_H_
+#define _LIST_H_
 
 using namespace std;
 
@@ -15,19 +16,37 @@ Node* new_node(const int& a){
   return ptr;
 }
 
-List::List(){
-  head = NULL;
-  tail = NULL;
-}
+class List
+{
+  public:
+    //constructor
+    List() : head(NULL), tail(NULL) {};
+    ~List(){
+      Node *ptr;
+      while ( head != NULL ){
+        ptr = head->next;
+        delete head;
+        head = ptr;
+      }
+    }
 
-List::~List(){
-  Node *ptr;
-  while ( head != NULL ){
-    ptr = head->next;
-    delete head;
-    head = ptr;
-  }
-}
+    // add element in the node
+    void push_back( const int& a );
+    void push_front( const int& a );
+
+    // remove element in the node
+    void pop_back();
+    void pop_front();
+
+    // count the number of node
+    int node_no() const ;
+
+    // print elements in the list
+    friend ostream& operator<<( ostream& out, const List& foo );
+
+  private:
+    Node *head, *tail;
+};
 
 void List::push_back( const int& a ){
   if ( head == NULL ){
@@ -40,14 +59,14 @@ void List::push_back( const int& a ){
 }
 
 void List::push_front( const int& a ){
-  if ( head == NULL ){
-    head = new_node(a);
-    tail = head;
-  } else {
-    Node* ptr = new_node(a);
-    ptr->next = head;
-    head = ptr;
-  }
+	if ( head == NULL ){
+		head = new_node(a);
+		tail = head;
+	} else {
+		Node* ptr = new_node(a);
+		ptr->next = head;
+		head = ptr;
+	}
 }
 
 void List::pop_back(){
@@ -95,3 +114,5 @@ ostream& operator<<( ostream& out, const List& foo ){
   }
   return out;
 }
+
+#endif
