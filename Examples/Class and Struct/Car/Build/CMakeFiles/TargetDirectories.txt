@@ -1,0 +1,3 @@
+/home/chris/MEGA/Programming/C++/project/Examples/Class and Struct/Car/Build/CMakeFiles/rebuild_cache.dir
+/home/chris/MEGA/Programming/C++/project/Examples/Class and Struct/Car/Build/CMakeFiles/Car.dir
+/home/chris/MEGA/Programming/C++/project/Examples/Class and Struct/Car/Build/CMakeFiles/edit_cache.dir

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/chris/MEGA/Programming/C++/project/Examples/Class and Struct/University/University.cc
+University.h
+/home/chris/MEGA/Programming/C++/project/Examples/Class and Struct/University/University.h
+
+/home/chris/MEGA/Programming/C++/project/Examples/Class and Struct/University/University.h
+iostream
+-
+string
+-
+vector
+-
+
+/home/chris/MEGA/Programming/C++/project/Examples/Class and Struct/University/main.cc
+iostream
+-
+University.h
+/home/chris/MEGA/Programming/C++/project/Examples/Class and Struct/University/University.h
+

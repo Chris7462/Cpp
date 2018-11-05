@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/University.dir/main.cc.o CMakeFiles/University.dir/University.cc.o  -o University 
