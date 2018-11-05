@@ -41,6 +41,12 @@ int main()
     istr.clear();
 
     std::cout << " " << point << " --> " << point.transformation(gt) << std::endl;
+
+    for ( i = 0 ; i < gt.size() ; ++i ){
+      delete gt[i];
+    }
+    gt.resize(0);
+
   } while ( no != 0 );
 
   return 0;
