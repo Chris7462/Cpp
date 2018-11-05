@@ -1,3 +1,0 @@
-/home/chris/MEGA/Programming/C++/project/Examples/Class and Struct/University/build/CMakeFiles/rebuild_cache.dir
-/home/chris/MEGA/Programming/C++/project/Examples/Class and Struct/University/build/CMakeFiles/University.dir
-/home/chris/MEGA/Programming/C++/project/Examples/Class and Struct/University/build/CMakeFiles/edit_cache.dir
