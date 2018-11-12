@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Set.h"
+#include "Point2D.h"
 
 int main(){
   Set<int> foo;
@@ -15,6 +16,12 @@ int main(){
   dbar.print();
 
   std::cout << dbar << std::endl;
+
+  Point2D<int> qoo(3,5);
+  std::cout << qoo << std::endl;
+
+  Set<Point2D<int>> baz(qoo,2);
+  std::cout << baz << std::endl;
 
   return 0;
 }
