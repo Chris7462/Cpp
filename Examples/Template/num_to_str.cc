@@ -2,12 +2,19 @@
 #include <sstream>
 #include <string>
 
-template <class T>
+template <typename T>
 std::string num_to_str(const T& x){
   std::ostringstream number;
   number << x;
   return number.str();
 } 
+
+template <typename T>
+T str_to_num(const std::string& foo ){
+  T num;
+  std::istringstream(foo) >> num;
+  return num;
+}
 
 int main(){
 
